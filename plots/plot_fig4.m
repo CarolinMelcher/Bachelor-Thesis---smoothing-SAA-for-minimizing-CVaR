@@ -8,7 +8,7 @@ t = zeros(length(n), 1);              % Execution times
 
 % Loop over each sample size to compute execution time
 for i = 1:n_evaluations
-    [~, ~, time, ~] = cvar_optimized(0.99, 10^-4, n(i));  % Call optimizer at 99% confidence, ε=10^-4, N=n(i)
+    [~, ~, time, ~] = cvar_ssaa(0.99, 10^-4, n(i));  % Call optimizer at 99% confidence, ε=10^-4, N=n(i)
     t(i)   = time;         
 end
 
