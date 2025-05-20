@@ -1,0 +1,10 @@
+% A simple demonstration script for the cvar_ssaa optimizer.
+
+% Example: optimize CVaR at 95% confidence with smoothing ε=1e-5 over 1e6 samples
+[z, cvar, time, iterations] = cvar_ssaa(0.95, 10^-5, 10^6);
+
+% Display results
+fprintf("Portfolio weights: [%.4f, %.4f, %.4f]\n", z(1), z(2), z(3));
+fprintf("Optimal CVaR:        %.4f\n", cvar);
+fprintf("Elapsed time:       %.2f seconds\n", time);
+fprintf("Iterations:         %d\n", iterations);
