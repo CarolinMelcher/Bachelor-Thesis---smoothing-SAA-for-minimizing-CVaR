@@ -8,7 +8,7 @@ c = zeros(length(n), 1);              % CVaR values
 
 % Loop over each sample size to compute CVaR
 for i = 1:n_evaluations
-    [~, cvar, ~, ~] = cvar_optimized(0.99, 10^-4, n(i));  % Call optimizer at 99% confidence, ε=10^-4, N=n(i)
+    [~, cvar, ~, ~] = cvar_ssaa(0.99, 10^-4, n(i));  % Call optimizer at 99% confidence, ε=10^-4, N=n(i)
     c(i)   = cvar;         
 end
 
