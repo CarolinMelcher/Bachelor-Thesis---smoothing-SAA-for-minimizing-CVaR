@@ -1,3 +1,4 @@
+% Code for comparison of SSAA vs. LPA (Section 6.2.1)
 % CVaR optimization over different sample sizes and confidence levels.
 
 % Define parameter grids
