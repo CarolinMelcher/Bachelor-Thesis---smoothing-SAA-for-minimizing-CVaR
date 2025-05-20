@@ -1,6 +1,6 @@
 % A simple demonstration script for the cvar_ssaa optimizer.
 
-% Example: optimize CVaR at 95% confidence with smoothing ε=1e-5 over 1e6 samples
+% Example: optimize CVaR at 95% confidence with smoothing ε=10^-5 over 10^6 samples
 [z, cvar, time, iterations] = cvar_ssaa(0.95, 10^-5, 10^6);
 
 % Display results
