@@ -10,7 +10,7 @@ function [z_optimal, cvar, time, iterations] = cvar_ssaa(alpha, eps, N)
     %   time       - elapsed computation time in seconds
     %   iterations - number of iterations by the optimizer
 
-    tic;  % start timer
+
 
     % Initial guess: equal weights for 3 assets, and threshold u = 0
     z0 = [1/3; 1/3; 1/3; 0];
@@ -36,11 +36,12 @@ function [z_optimal, cvar, time, iterations] = cvar_ssaa(alpha, eps, N)
 
     % Set up optimizer options and use SQP
     options = optimoptions('fmincon', 'Display', 'off', 'MaxIterations', 2000, 'Algorithm', 'sqp');
-
+    
+    tic;  
     % Run optimization 
     [z_optimal, cvar, ~, output] = fmincon(objective, z0, A, b, Aeq, beq, lb, [], [], options);
+    time = toc;
     iterations = output.iterations;
 
-    % Stop timer
-    time = toc;
+   
 end
