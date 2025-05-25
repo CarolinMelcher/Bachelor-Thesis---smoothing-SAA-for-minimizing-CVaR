@@ -1,4 +1,4 @@
-% Code for Figure 3: CVaR as sample size N grows
+% Code for Figure 4: CVaR as sample size N grows
 
 n_evaluations = 250;                               % Number of evaluations
 n = round(logspace(2, 7, n_evaluations));          % Generate 250 sample sizes logarithmically spaced between 10^2 and 10^7
