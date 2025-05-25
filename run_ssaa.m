@@ -1,5 +1,6 @@
 % Code for comparison of SSAA vs. LPA (Section 6.2.1)
 % CVaR optimization over different sample sizes and confidence levels.
+% This example demonstrates the SSAA. Results for the LPA are easily obtained by switching the optimizer to cvar_lpa and omiting the smoothing parameter.
 
 % Define parameter grids
 Nval = [5000, 10000, 25000, 45000];   % Monte Carlo sample counts
@@ -30,3 +31,5 @@ end
 % Convert to table 
 T = array2table(results, 'VariableNames', ...
     {'Alpha','N','x1','x2','x3','CVaR','VaR','Time_s','Iterations'});
+
+
