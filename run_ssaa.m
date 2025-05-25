@@ -2,7 +2,7 @@
 % CVaR optimization over different sample sizes and confidence levels.
 
 % Define parameter grids
-Nval = [1000, 3000, 5000, 10000, 20000];   % Monte Carlo sample counts
+Nval = [5000, 10000, 25000, 45000];   % Monte Carlo sample counts
 alphas = [0.90, 0.95, 0.99];               % CVaR confidence levels
 eps = 10^-5;                               % Smoothing parameter ε
 
@@ -18,9 +18,9 @@ for i = 1:length(alphas)
 
         results(index,1) = round(alphas(i), 5);
         results(index,2) = round(Nval(k), 5);
-        results(index,3:5) = round(x(1:end-1)', 5);
-        results(index,6) = round(cvarVal, 5);
-        results(index,7) = round(x(end), 5);
+        results(index,3:5) = round(100*x(1:end-1)', 5);
+        results(index,6) = round(100*cvarVal, 5);
+        results(index,7) = round(100*x(end), 5);
         results(index,8) = round(iterCount, 5);
         results(index,9) = round(elapsedTime, 5);
         index = index + 1;
@@ -29,4 +29,4 @@ end
 
 % Convert to table 
 T = array2table(results, 'VariableNames', ...
-    {'Alpha','N','x1','x2','x3','CVaR','u','Time_s','Iterations'});
+    {'Alpha','N','x1','x2','x3','CVaR','VaR','Time_s','Iterations'});
