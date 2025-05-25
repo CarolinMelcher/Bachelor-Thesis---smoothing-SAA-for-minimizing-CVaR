@@ -1,4 +1,4 @@
-This repository contains MATLAB scripts for minimizing Conditional Value at Risk (CVaR) using a smoothing sample average approximation approach. 
+This repository contains MATLAB scripts for minimizing Conditional Value at Risk (CVaR) using a smoothing sample average approximation (SSAA) approach. 
 
 The main script **cvar_ssaa.m** implements the optimization routine: it generates Monte Carlo samples, smooths the CVaR objective via **psi_N.m**, and then calls fmincon to return the optimal portfolio weights, the CVaR value, the elapsed computation time, and the number of solver iterations. 
 
